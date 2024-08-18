@@ -1,0 +1,27 @@
+/*
+
+Final Project
+Author: Matthew Larsen
+Date: 08/15/2024
+SDEV 106
+File: projects_styles.css
+
+*/
+
+/*****************
+Responsive styles:
+******************/
+
+/* Desktop only styles (screen width greater than 960px): */
+
+@media screen and (min-width: 960px) {
+}
+
+/* Tablet styles (screen width less than 960px): */
+
+@media screen and (max-width: 959px) {
+}
+
+/* Mobile styles (screen width less than 480px): */
+@media screen and (max-width: 471px) {
+}
