@@ -8,15 +8,38 @@ File: site_styles.css
 
 */
 
+/*
+Site colors:
+
+color: #000000;
+
+color: #ffffff;
+
+color: #f5f5f5;
+
+color: #f42c04;
+
+color: #637a8d;
+
+color: #124069;
+
+
+*/
+
+/*********************
+Body Layout and General Styles
+**********************/
+
 body {
   display: grid;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
 
-header {
-  display: grid;
-  grid-area: head;
-  background-color: white;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+    "head head head head head"
+    "aside main main main main"
+    "foot foot foot foot foot";
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: black;
 }
 
 h1,
@@ -27,12 +50,61 @@ h4 {
   font-weight: bold;
 }
 
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
 h2 {
+  text-shadow: 1px 1px #000000;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
   color: #f42c04;
+}
+
+aside h2 {
+  color: whitesmoke;
+  text-shadow: 2px 2px black;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #f42c04;
+}
+
+/***********************
+Header Layout and Styles
+************************/
+
+header {
+  grid-area: head;
+  display: grid;
+  background-color: #ffffff;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+    "nav nav nav nav nav"
+    "sec sec sec sec sec";
+  border-bottom: 2px solid black;
+}
+
+header section {
+  grid-area: sec;
+  font-size: 1.7rem;
+  padding: 1.5rem;
+  border-left: 2px solid black;
+}
+
+header ul {
+  list-style: none;
 }
 
 nav {
   grid-area: nav;
+  text-shadow: 1px 1px black;
+  font-size: 1.5rem;
+  padding: 0.6rem;
+  border-bottom: 2px solid black;
   background-color: #124069;
 }
 
@@ -44,36 +116,10 @@ nav ul {
   justify-content: space-around;
 }
 
-main {
-  grid-area: main;
-  background-color: white;
-}
-
-aside {
-  grid-area: aside;
-  background-color: #a6cfd5;
-}
-
-aside ul {
-  list-style-type: none;
-}
-article ul {
-  list-style: none;
-}
-header ul {
-  list-style: none;
-}
-
-footer {
-  grid-area: foot;
-  color: whitesmoke;
-  background-color: #124069;
-}
-
 /* Nav Link Styles */
 
 nav a:link {
-  color: whitesmoke;
+  color: #f5f5f5;
   text-decoration: none;
 }
 
@@ -92,79 +138,13 @@ nav a:active {
   font-style: italic;
 }
 
-/* Aside Link Styles */
-
-aside a:link {
-  color: black;
-  text-decoration: none;
-}
-
-aside a:visited {
-  color: black;
-  text-decoration: none;
-}
-
-aside a:hover {
-  color: black;
-  font-weight: bold;
-}
-aside a:active {
-  background-color: whitesmoke;
-  font-style: italic;
-}
-
-/*****************
-Responsive styles:
-******************/
-
-/************************************************
-Desktop styles (screen width greater than 960px): 
-************************************************/
-
-body {
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas:
-    "head head head head"
-    "aside main main main"
-    "foot foot foot foot";
-}
-header {
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas:
-    "nav nav nav nav"
-    "img sec sec sec";
-  border-bottom: 2px solid black;
-}
-
-nav {
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  border-bottom: 2px solid black;
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-}
-
-header section {
-  grid-area: sec;
-  font-size: 1.3rem;
-  padding: 2rem;
-  border-left: 2px solid black;
-}
-
-header img {
-  grid-area: img;
-  width: 100%;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
+/*********************
+Main Layout and Styles
+**********************/
 
 main {
+  grid-area: main;
+  background-color: white;
   font-size: 1.3rem;
   padding: 2rem;
   padding-bottom: 0;
@@ -179,217 +159,63 @@ main li {
   margin-bottom: 1rem;
 }
 
+article ul {
+  list-style: none;
+}
+
+/**********************
+Aside Layout and Styles
+***********************/
+
 aside {
+  grid-area: aside;
   font-size: 1.3rem;
   padding: 2rem 1rem;
   padding-right: 0;
+  background-color: #637a8d;
+}
+
+aside ul {
+  list-style-type: none;
 }
 
 aside li {
   margin-bottom: 1.5rem;
 }
 
+/* Aside Link Styles */
+
+aside a:link {
+  color: white;
+  text-shadow: 1px 1px #124069;
+  text-decoration: none;
+}
+
+aside a:visited {
+  color: white;
+  text-shadow: 1px 1px #124069;
+  text-decoration: none;
+}
+
+aside a:hover {
+  color: black;
+  font-weight: bold;
+}
+aside a:active {
+  background-color: whitesmoke;
+  font-style: italic;
+}
+
+/**********************
+Footer Layout and Styles
+***********************/
+
 footer {
+  grid-area: foot;
+  text-shadow: 1px 1px black;
   text-align: center;
   font-size: 1rem;
   padding: 0.5rem;
-}
-
-/*******************************************
-Mobile styles (screen width less than 960px): 
-********************************************/
-
-@media screen and (max-width: 960px) {
-  nav {
-    font-size: 1rem;
-    padding: 0.3rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  header section {
-    font-size: 1rem;
-    padding: 1rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  main {
-    font-size: 0.9rem;
-    padding: 1rem;
-    padding-bottom: 0;
-  }
-
-  main section {
-    margin-bottom: 1.5rem;
-  }
-
-  main li {
-    margin-bottom: 1rem;
-  }
-
-  aside {
-    font-size: 0.9rem;
-    padding: 1rem 1rem;
-    padding-right: 0;
-  }
-
-  aside li {
-    margin-bottom: 1rem;
-  }
-
-  footer {
-    font-size: 0.9rem;
-    padding: 0.3rem;
-  }
-}
-
-/*******************************************
-Mobile styles (screen width less than 720px): 
-********************************************/
-
-@media screen and (max-width: 720px) {
-  nav {
-    font-size: 0.8rem;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-  }
-
-  header section {
-    font-size: 0.7rem;
-    padding: 0.5rem;
-  }
-
-  h2 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  main {
-    font-size: 0.7rem;
-    padding: 0.5rem;
-    padding-bottom: 0;
-  }
-
-  main section {
-    margin-bottom: 1rem;
-  }
-
-  main li {
-    margin-bottom: 0.5rem;
-  }
-
-  aside {
-    font-size: 0.6rem;
-    padding: 0.5rem 0.5rem;
-    padding-right: 0;
-  }
-
-  aside li {
-    margin-bottom: 1rem;
-  }
-
-  footer {
-    font-size: 0.7rem;
-  }
-}
-
-/*******************************************
-Mobile styles (screen width less than 480px): 
-********************************************/
-
-@media screen and (max-width: 480px) {
-  body {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "head "
-      "main"
-      "aside"
-      "foot";
-  }
-  header {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "nav"
-      "sec"
-      "img";
-    text-align: center;
-    border-bottom: none;
-    margin-bottom: 1rem;
-  }
-
-  nav {
-    font-size: 1.3rem;
-    padding: 1rem 0.5rem;
-    border-bottom: None;
-  }
-
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  header section {
-    font-size: 1rem;
-    padding: 1.5rem 1rem;
-  }
-
-  header img {
-    width: 75%;
-    justify-self: center;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  main {
-    font-size: 0.9rem;
-    padding: 0.1rem;
-    padding-bottom: 0;
-    border-left: none;
-    text-align: center;
-  }
-
-  main section {
-    margin-bottom: 1rem;
-  }
-
-  main li {
-    margin-bottom: 1rem;
-  }
-
-  aside {
-    font-size: 0.9rem;
-    padding: 0.5rem 0.5rem;
-    padding-right: 0;
-    text-align: center;
-  }
-
-  .socials {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-  }
-
-  aside li {
-    margin-bottom: 1rem;
-  }
-
-  footer {
-    font-size: 0.7rem;
-    padding: 0.5rem;
-    border-top: none;
-  }
+  color: whitesmoke;
+  background-color: #124069;
 }
