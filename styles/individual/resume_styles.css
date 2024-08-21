@@ -41,4 +41,5 @@ aside img {
   width: 75%;
   border-radius: 50%;
   margin-bottom: 2rem;
+  box-shadow: 5px 5px 20px black;
 }

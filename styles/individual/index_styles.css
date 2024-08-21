@@ -182,6 +182,26 @@ Mobile styles (screen width less than 600px):
     padding: 0.7rem 0.5rem;
     padding-right: 0;
   }
+
+  aside h2 {
+    text-shadow: none;
+  }
+
+  aside a:link {
+    text-shadow: none;
+  }
+
+  aside a:visited {
+    text-shadow: none;
+  }
+
+  aside a:hover {
+    font-weight: bold;
+  }
+  aside a:active {
+    background-color: whitesmoke;
+    font-style: italic;
+  }
 }
 
 /*******************************************
@@ -236,7 +256,9 @@ Mobile styles (screen width less than 480px):
   header img {
     width: 70%;
     justify-self: center;
-    border: 3px, solid black;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px darkgrey;
   }
 
   main {
@@ -244,6 +266,9 @@ Mobile styles (screen width less than 480px):
     padding: 0.1rem;
     padding-bottom: 0;
     border-left: none;
+  }
+
+  main h2 {
     text-align: center;
   }
 
@@ -251,12 +276,21 @@ Mobile styles (screen width less than 480px):
     margin-bottom: 0;
   }
 
+  main ul {
+    padding-left: 2rem;
+  }
+
   main li {
     margin-bottom: 0;
     padding: 0.4rem;
   }
 
+  aside h2 {
+    color: black;
+  }
+
   aside {
+    color: black;
     font-size: 0.9rem;
     padding: 0.5rem 0.5rem;
     padding-right: 0;
@@ -273,6 +307,24 @@ Mobile styles (screen width less than 480px):
 
   aside li {
     padding: 0.1rem;
+  }
+
+  aside a:link {
+    color: black;
+  }
+
+  aside a:visited {
+    color: black;
+  }
+
+  aside a:hover {
+    color: black;
+    font-weight: bold;
+  }
+  aside a:active {
+    color: black;
+    background-color: whitesmoke;
+    font-style: italic;
   }
 
   footer {
